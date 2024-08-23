@@ -1,10 +1,10 @@
 # *Simple**FOC*** ***Drive**Shield* *v1.2*
 
-<img src="images/top.jpg"  height="220px"><img src="images/bottom.jpg"  height="220px"><img src="images/side.jpg"  height="220px">
-
-
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?color=blue) 
 <!-- ![GitHub release (latest by date)](https://img.shields.io/github/v/release/simplefoc/simplefoc-driveshield) ![GitHub Release Date](https://img.shields.io/github/release-date/simplefoc/simplefoc-driveshield?color=blue) -->
+
+<img src="images/top.jpg"  height="220px"><img src="images/bottom.jpg"  height="220px"><img src="images/side.jpg"  height="220px">
+
 
 This is an open-source low-cost BLDC driver boards in the form of a Arduino shield. It is a part of the *Simple**FOC*** project. The board is the big brother of the *Simple**FOC**Shield* and is designed to drive motors with higher current requirements, up to 30Amps. The board is created with the same philosophy as the *Simple**FOC**Shield* - to be simple to use, low-cost, and open-source and fully compatible with the *Simple**FOC***library. 
 
