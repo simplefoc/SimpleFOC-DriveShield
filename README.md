@@ -12,13 +12,23 @@ Additionally the aim of the board is to serve as a template project for the comm
 - The board is relatively simple and can be easily modified to fit different requirements.
 - The board is designed in EasyEDA and all the fabrication files are available for download
 
+### Components
+- **DRV8320H** gate driver
+    - Hardware configuation 
+   - 3PWM
+   -  Protections: undervoltage lockout, charge pump fault, MOSFET overcurrent, MOSFET short circuit, gate driver fault and overtemperature
+- **BSZ0904NSI** mosfets
+   - Standard 3mm x 3mm footprint (can be easily exchanged)
+   - Max current 75A 
+   - Max voltage 30V
+- **ACS712**: 
+   -  30Amps bidirectional
+   - In-line current sensing
+
 ### Features
-- **Plug & play**: In combination with Arduino *Simple**FOC**library* - [github](https://github.com/simplefoc/Arduino-FOC)
-- **In-line current sensing**: 30Amps bidirectional
-   - ACS712 hall current sensor
-- **Absolute max ratings** 
+- **Boards absolute max ratings** 
    - Max current: 30A, 
-   - Max input voltage: 35V
+   - Max input voltage: 30V
 - **Stackable**: running 2 motors in the same time
 - **Encoder/Hall sensors interface**: Integrated 3.3kΩ pullups (configurable)
 - **I2C interface**: Integrated 4.7kΩ pullups (configurable)
@@ -42,7 +52,7 @@ Feature | <span class="simple">Simple<span class="foc">FOC</span>Shield</span> v
 **Onboard LDO** | ❌ | LM7808 | LM7808 | ❌
 **Stackable** | ✔️ | ✔️ | ✔️ | ✔️
 **Max current** | 2Amps (5Amp peak) | 2Amps (5Amp peak) | 2Amps (3Amp peak) | 20Amps (30Amp peak)
-**Max voltage** | 24V | 35V | 35V | 35V 
+**Max voltage** | 24V | 35V | 35V | 30V 
 **Protections** | Overtemperature | Overtemperature | Overtemperature, Overcurrent | Overcurrent
 **Footprint** | 68mm x 53 mm | 68mm x 53 mm | 56mm x 53mm | 56mm x 53mm
 **Design tool** | Altium Designer 2019 | Altium Designer 2019 | EasyEDA | EasyEDA 
@@ -55,7 +65,7 @@ Version  | release | Release date | Comment
 ----- | ----- | ---- | ----
 *Simple**FOC** **Drive**Shield* v1.0 | v0.1 | 05/24 | - Test version <br> - **DRV8300** gate driver <br> - **SE3082G** dual mosfets <br> - ACS712 (range +-30Amps) <br> - 20V max voltage 
 *Simple**FOC** **Drive**Shield* v1.0 | v1.0 | 06/24 | - Transition to **DRV8320H** gate driver <br>  - 30V max voltage
-*Simple**FOC** **Drive**Shield* v1.1 | v1.1 | 07/24 | - Transition to 3x3mm **BSZ09x** mosfets instead of **SE3082G** <br> - 35V max voltage
+*Simple**FOC** **Drive**Shield* v1.1 | v1.1 | 07/24 | - Transition to 3x3mm **BSZ09x** mosfets instead of **SE3082G** <br> - 30V max voltage
 *Simple**FOC** **Drive**Shield* v1.2 | v1.2 | 08/24 | Initial release <br>- Transition to **4 layer** PCB <br> - Enabling stacking (soldering pads) <br> - Configurable pullups (I2C and encoder) 
 
 
