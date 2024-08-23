@@ -14,7 +14,6 @@ Additionally the aim of the board is to serve as a template project for the comm
 
 ### Features
 - **Plug & play**: In combination with Arduino *Simple**FOC**library* - [github](https://github.com/simplefoc/Arduino-FOC)
-- **Low-cost**: Price of 25-40€ - [Check the pricing](https://www.simplefoc.com/shop) 
 - **In-line current sensing**: Up to 5Amps bidirectional
    - ACS712 hall current sensor
 - **Absolute max ratings** - Designed for Gimbal motors with the internal resistance >10 Ωs. 
@@ -28,6 +27,7 @@ Additionally the aim of the board is to serve as a template project for the comm
 - **Open Source**: 
    - Fully designed in **EasyEDA**: [EasyEDA project](https://oshwlab.com/the.skuric/SimpleFOC-Drive)
    - Fully available fabrication files - [how to make it yourself](https://docs.simplefoc.com/arduino_simplefoc_shield_fabrication)
+- **Low-cost**: Estimated price of 25-40€ - *Will be available in the SimpleFOC shop*
 
 
 ## Shield version comparison
@@ -59,6 +59,44 @@ Version  | release | Release date | Comment
 *Simple**FOC** **Drive**Shield* v1.2 | v1.2 | 08/24 | Initial release <br>- Transition to **4 layer** PCB <br> - Enabling stacking (soldering pads) <br> - Configurable pullups (I2C and encoder) 
 
 
-## Some more images
+## Size comparison with SimpleFOCShield v3
 
-<img src="images/nucleo.png"  height="320px"><img src="images/comp.png"  height="320px">
+<img src="images/comp.png"  height="320px">
+
+## Temperature characteristics
+
+For higher currents especially in the range of 20-30Amps the board can get quite hot. Depending on the copper thickness of the PCB chosen when ordering the board the temperature can vary, as well as the cooling conditions. The board can be fitted with a heatsink to improve the thermal performance.
+
+The following table shows the temperature rise of the board for different current levels. The measurements were done in a controlled environment with a constant ambient temperature of 25°C. The board was powered with 24V and the current was set to the desired level using the *Simple**FOC***library. The temperature was measured on the top of the board on the DRV8320H gate driver and the BSZ0904NSI mosfets. The temperature is measured with a PICOLOG TC-08 thermocouple data logger. Two copper thicknesses were tested
+
+1. Standard 4-layer: **1oz** (35um) copper thickness on top and bottom layers, **0.5oz** (17.5um) copper thickness on inner layers
+2. Thick 4-layer: **2oz** (70um) copper thickness on top and bottom layers, **0.5oz** (35um) copper thickness on inner layers 
+
+Current [A] | Standard 4-layer MOSFETS | Thick 4-layer  MOSFETS | Standard 4-layer DRV8320 |  Thick 4-layer DRV8320 
+--- | --- | ---| --- | ---
+10 | 57°C| 53°C | 50°C  | 52°C
+20 | 78°C | 68°C| 62°C  | 62°C
+30 | 125°C  | 100°C | 82°C | 82°C
+
+As the BSZ0904NSI mosfets are rated for temperatures up to 150°C and the DRV8320H gate driver up to 125°C the board can be used up to 20Amps (continuous) without additional cooling and up to 30Amps with either a heatsink or by using a thicker copper PCB (2oz top and bottom layers).
+
+
+<details>
+<summary>Check more details about the experiment</summary>
+
+
+### Measured temperatures during the experiment
+
+<img src="images/experiment/temp_record.jpg" >
+
+### Standard 4-layer PCB (1oz top and bottom, 0.5oz inner layers)
+<img src="images/experiment/1oz (1).jpg" height="200px">
+<img src="images/experiment/1oz (2).jpg" height="200px">
+
+
+### Thick 4-layer PCB (2oz top and bottom, 0.5oz inner layers)
+<img src="images/experiment/2oz (1).jpg" height="200px">
+<img src="images/experiment/2oz (2).jpg" height="200px">
+
+
+</details>
