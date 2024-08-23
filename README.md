@@ -67,10 +67,17 @@ Version  | release | Release date | Comment
 
 For higher currents especially in the range of 20-30Amps the board can get quite hot. Depending on the copper thickness of the PCB chosen when ordering the board the temperature can vary, as well as the cooling conditions. The board can be fitted with a heatsink to improve the thermal performance.
 
-The following table shows the temperature rise of the board for different current levels. The measurements were done in a controlled environment with a constant ambient temperature of 25°C. The board was powered with 24V and the current was set to the desired level using the *Simple**FOC***library. The temperature was measured on the top of the board on the DRV8320H gate driver and the BSZ0904NSI mosfets. The temperature is measured with a PICOLOG TC-08 thermocouple data logger. Two copper thicknesses were tested
+The following table shows the temperature rise of the board for different current levels. The measurements were done in a controlled environment with a constant ambient temperature of 25°C. The board was powered with 24V and the current was set to the desired level using the *Simple**FOC***library. The temperature was measured on the top of the board on the DRV8320H gate driver and the BSZ0904NSI mosfets. The temperature is measured with a PICOLOG TC-08 thermocouple data logger. 
 
-1. Standard 4-layer: **1oz** (35um) copper thickness on top and bottom layers, **0.5oz** (17.5um) copper thickness on inner layers
-2. Thick 4-layer: **2oz** (70um) copper thickness on top and bottom layers, **0.5oz** (35um) copper thickness on inner layers 
+<img src="images/experiment/1oz (1).jpg"  height="300px">
+
+Two copper thicknesses were tested
+1. Standard 4-layer: 
+    - **1oz** (35um) copper thickness on top and bottom layers, 
+    - **0.5oz** (17.5um) copper thickness on inner layers
+2. Thick 4-layer: 
+    - **2oz** (70um) copper thickness on top and bottom layers, 
+    - **0.5oz** (35um) copper thickness on inner layers 
 
 Current [A] | Standard 4-layer MOSFETS | Thick 4-layer  MOSFETS | Standard 4-layer DRV8320 |  Thick 4-layer DRV8320 
 --- | --- | ---| --- | ---
@@ -78,7 +85,10 @@ Current [A] | Standard 4-layer MOSFETS | Thick 4-layer  MOSFETS | Standard 4-lay
 20 | 78°C | 68°C| 62°C  | 62°C
 30 | 125°C  | 100°C | 82°C | 82°C
 
-As the BSZ0904NSI mosfets are rated for temperatures up to 150°C and the DRV8320H gate driver up to 125°C the board can be used up to 20Amps (continuous) without additional cooling and up to 30Amps with either a heatsink or by using a thicker copper PCB (2oz top and bottom layers).
+As the **BSZ0904NSI** mosfets are rated for temperatures up to 150°C and the **DRV8320H** gate driver up to 125°C the board can be used up to 30Amps without additional cooling. 
+
+**However, we strongly recommend using a heatsink or a thicker copper PCB (2oz top and bottom layers) for currents above 20Amps continuous.**
+
 
 
 <details>
