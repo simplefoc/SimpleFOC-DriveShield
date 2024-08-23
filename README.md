@@ -14,9 +14,9 @@ Additionally the aim of the board is to serve as a template project for the comm
 
 ### Features
 - **Plug & play**: In combination with Arduino *Simple**FOC**library* - [github](https://github.com/simplefoc/Arduino-FOC)
-- **In-line current sensing**: Up to 5Amps bidirectional
+- **In-line current sensing**: 30Amps bidirectional
    - ACS712 hall current sensor
-- **Absolute max ratings** - Designed for Gimbal motors with the internal resistance >10 Ωs. 
+- **Absolute max ratings** 
    - Max current: 30A, 
    - Max input voltage: 35V
 - **Stackable**: running 2 motors in the same time
