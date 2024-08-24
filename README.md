@@ -85,6 +85,7 @@ Two copper thicknesses were tested
     - **0.5oz** (17.5um) copper thickness on inner layers
 
 <img src="images/experiment/1oz (1).jpg" height="200px"><img src="images/experiment/1oz (2).jpg" height="200px">
+
 2. Thick 4-layer: 
     - **2oz** (70um) copper thickness on top and bottom layers, 
     - **0.5oz** (35um) copper thickness on inner layers
