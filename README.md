@@ -27,7 +27,7 @@ Additionally the aim of the board is to serve as a template project for the comm
 
 ### Features
 - **Boards absolute max ratings** 
-   - Max current: 30A, 
+   - Max current: 20A continuous (peak 30A - measured) 
    - Max input voltage: 30V
 - **Stackable**: running 2 motors in the same time
 - **Encoder/Hall sensors interface**: Integrated 3.3kΩ pullups (configurable)
@@ -53,7 +53,7 @@ Feature | <span class="simple">Simple<span class="foc">FOC</span>Shield</span> v
 **Stackable** | ✔️ | ✔️ | ✔️ | ✔️
 **Max current** | 2Amps (5Amp peak) | 2Amps (5Amp peak) | 2Amps (3Amp peak) | 20Amps (30Amp peak)
 **Max voltage** | 24V | 35V | 35V | 30V 
-**Protections** | Overtemperature | Overtemperature | Overtemperature, Overcurrent | Overcurrent
+**Protections** | Overtemperature | Overtemperature | Overtemperature, Overcurrent | undervoltage lockout, charge pump fault, MOSFET overcurrent, MOSFET short circuit, gate driver fault, overtemperature
 **Footprint** | 68mm x 53 mm | 68mm x 53 mm | 56mm x 53mm | 56mm x 53mm
 **Design tool** | Altium Designer 2019 | Altium Designer 2019 | EasyEDA | EasyEDA 
 
@@ -75,48 +75,38 @@ Version  | release | Release date | Comment
 
 ## Temperature characteristics
 
-For higher currents especially in the range of 20-30Amps the board can get quite hot. Depending on the copper thickness of the PCB chosen when ordering the board the temperature can vary, as well as the cooling conditions. The board can be fitted with a heatsink to improve the thermal performance.
+This board can measure the phase currents up to 30Amps, so it is intended to be used in applications that require current draw up to around 20Amps continuous. For higher currents especially in the range of 15-30Amps the board can get quite hot. Depending on the copper thickness of the PCB chosen when ordering the board the temperature can vary, as well as the cooling conditions. The board can be fitted with a heatsink to improve the thermal performance.
 
-The following table shows the temperature rise of the board for different current levels. The measurements were done in a controlled environment with a constant ambient temperature of 25°C. The board was powered with 24V and the current was set to the desired level using the *Simple**FOC***library. The temperature was measured on the top of the board on the DRV8320H gate driver and the BSZ0904NSI mosfets. The temperature is measured with a PICOLOG TC-08 thermocouple data logger. 
-
-<img src="images/experiment/1oz (1).jpg"  height="300px">
+So I've wanted to quantify the temperature characteristics of the board when a continuous current is applied to the motor. The measurements were done with a relatively constant ambient temperature of around 25°C. The board was powered with 24V. The motor was run at very low speed (0.1rad/s) in the open loop and the current (q component) was set to 10, 15 and 20 amps for prolonged periods of time. I've measured the temperature on the top of the board on the DRV8320H gate driver and the BSZ0904NSI mosfets. I've used the PICOLOG TC-08 thermocouple data logger to do the measuring.
 
 Two copper thicknesses were tested
 1. Standard 4-layer: 
     - **1oz** (35um) copper thickness on top and bottom layers, 
     - **0.5oz** (17.5um) copper thickness on inner layers
+<img src="images/experiment/1oz (1).jpg" height="200px"><img src="images/experiment/1oz (2).jpg" height="200px">
 2. Thick 4-layer: 
     - **2oz** (70um) copper thickness on top and bottom layers, 
     - **0.5oz** (35um) copper thickness on inner layers 
+<img src="images/experiment/2oz (1).jpg" height="200px"><img src="images/experiment/2oz (2).jpg" height="200px">
+
+
+### Experiment results
+Here is the table of the results
 
 Current [A] | Standard 4-layer MOSFETS | Thick 4-layer  MOSFETS | Standard 4-layer DRV8320 |  Thick 4-layer DRV8320 
 --- | --- | ---| --- | ---
 10 | 57°C| 53°C | 50°C  | 52°C
-20 | 78°C | 68°C| 62°C  | 62°C
-30 | 125°C  | 100°C | 82°C | 82°C
+15 | 78°C | 68°C| 62°C  | 62°C
+20 | 125°C  | 100°C | 82°C | 82°C
 
-As the **BSZ0904NSI** mosfets are rated for temperatures up to 150°C and the **DRV8320H** gate driver up to 125°C the board can be used up to 30Amps without additional cooling. 
+So the results seem to suggest that, as the **BSZ0904NSI** mosfets are rated for temperatures up to 150°C and the **DRV8320H** gate driver up to 125°C, the board can be used up to 20Amps without additional cooling. 
 
-**However, we strongly recommend using a heatsink or a thicker copper PCB (2oz top and bottom layers) for currents above 20Amps continuous.**
-
+**However, I would definitely recommend using a heatsink or a thicker copper PCB (2oz top and bottom layers) for currents above 15Amps continuous.**
 
 
 <details>
-<summary>Check more details about the experiment</summary>
-
-
-### Measured temperatures during the experiment
+<summary>Measured temperatures during the experiment</summary>
 
 <img src="images/experiment/temp_record.jpg" >
-
-### Standard 4-layer PCB (1oz top and bottom, 0.5oz inner layers)
-<img src="images/experiment/1oz (1).jpg" height="200px">
-<img src="images/experiment/1oz (2).jpg" height="200px">
-
-
-### Thick 4-layer PCB (2oz top and bottom, 0.5oz inner layers)
-<img src="images/experiment/2oz (1).jpg" height="200px">
-<img src="images/experiment/2oz (2).jpg" height="200px">
-
 
 </details>
