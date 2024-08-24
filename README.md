@@ -14,7 +14,7 @@ Additionally the aim of the board is to serve as a template project for the comm
 
 ### Components
 - **DRV8320H** gate driver
-    - Hardware configuation 
+    - Hardware configuration 
    - 3PWM
    -  Protections: undervoltage lockout, charge pump fault, MOSFET overcurrent, MOSFET short circuit, gate driver fault and overtemperature
 - **BSZ0904NSI** mosfets
@@ -83,10 +83,12 @@ Two copper thicknesses were tested
 1. Standard 4-layer: 
     - **1oz** (35um) copper thickness on top and bottom layers, 
     - **0.5oz** (17.5um) copper thickness on inner layers
+
 <img src="images/experiment/1oz (1).jpg" height="200px"><img src="images/experiment/1oz (2).jpg" height="200px">
 2. Thick 4-layer: 
     - **2oz** (70um) copper thickness on top and bottom layers, 
-    - **0.5oz** (35um) copper thickness on inner layers 
+    - **0.5oz** (35um) copper thickness on inner layers
+
 <img src="images/experiment/2oz (1).jpg" height="200px"><img src="images/experiment/2oz (2).jpg" height="200px">
 
 
