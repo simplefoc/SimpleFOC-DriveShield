@@ -1,7 +1,7 @@
 # *Simple**FOC*** ***Drive**Shield* *v1.2*
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?color=blue) 
-<!-- ![GitHub release (latest by date)](https://img.shields.io/github/v/release/simplefoc/simplefoc-driveshield) ![GitHub Release Date](https://img.shields.io/github/release-date/simplefoc/simplefoc-driveshield?color=blue) -->
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/simplefoc/SimpleFOC-DriveShield) ![GitHub Release Date](https://img.shields.io/github/release-date/simplefoc/SimpleFOC-DriveShield?color=blue)
 
 <img src="images/top.jpg"  height="150px"><img src="images/bottom.jpg"  height="150px"><img src="images/side.jpg"  height="150px">
 
@@ -66,7 +66,7 @@ Version  | release | Release date | Comment
 *Simple**FOC** **Drive**Shield* v1.0 | v0.1 | 05/24 | - Test version <br> - **DRV8300** gate driver <br> - **SE3082G** dual mosfets <br> - ACS712 (range +-30Amps) <br> - 20V max voltage 
 *Simple**FOC** **Drive**Shield* v1.0 | v1.0 | 06/24 | - Transition to **DRV8320H** gate driver <br>  - 30V max voltage
 *Simple**FOC** **Drive**Shield* v1.1 | v1.1 | 07/24 | - Transition to 3x3mm **BSZ09x** mosfets instead of **SE3082G** <br> - 30V max voltage
-*Simple**FOC** **Drive**Shield* v1.2 | v1.2 | 08/24 | Initial release <br>- Transition to **4 layer** PCB <br> - Enabling stacking (soldering pads) <br> - Configurable pullups (I2C and encoder) 
+*Simple**FOC** **Drive**Shield* v1.2 | [v1.2](https://github.com/simplefoc/SimpleFOC-DriveShield/releases/tag/v1.2) | 08/24 | Initial release <br>- Transition to **4 layer** PCB <br> - Enabling stacking (soldering pads) <br> - Configurable pullups (I2C and encoder) 
 
 
 ## Size comparison with SimpleFOCShield v3
