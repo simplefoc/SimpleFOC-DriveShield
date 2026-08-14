@@ -1,29 +1,33 @@
-# *Simple**FOC*** ***Drive**Shield* *v1.2*
+# *Simple**FOC*** ***Drive**Shield* *v1.8*
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?color=blue) 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/simplefoc/SimpleFOC-DriveShield) ![GitHub Release Date](https://img.shields.io/github/release-date/simplefoc/SimpleFOC-DriveShield?color=blue)
 
-<img src="images/top.jpg"  height="150px"><img src="images/bottom.jpg"  height="150px"><img src="images/side.jpg"  height="150px">
+<img src="images/top.png"  height="150px"><img src="images/bottom.png"  height="150px"><img src="images/side.png"  height="150px">
 
 
-This is an open-source low-cost BLDC driver boards in the form of a Arduino shield. It is a part of the *Simple**FOC*** project. The board is the big brother of the *Simple**FOC**Shield* and is designed to drive motors with higher current requirements, up to 30Amps. The board is created with the same philosophy as the *Simple**FOC**Shield* - to be simple to use, low-cost, and open-source and fully compatible with the *Simple**FOC***library. 
+This is an open-source low-cost BLDC driver boards in the form of a Arduino shield. It is a part of the *Simple**FOC*** project. The board is the big brother of the *Simple**FOC**Shield* and is designed to drive motors with higher current requirements, up to 40Amps. The board is created with the same philosophy as the *Simple**FOC**Shield* - to be simple to use, low-cost, and open-source and fully compatible with the *Simple**FOC***library. 
 
 Additionally the aim of the board is to serve as a template project for the community to build their own motor drivers. 
 - The board is relatively simple and can be easily modified to fit different requirements.
 - The board is designed in EasyEDA and all the fabrication files are available for download
 
 ### Components
-- **DRV8320H** gate driver
-    - Hardware configuration 
-   - 3PWM
-   -  Protections: undervoltage lockout, charge pump fault, MOSFET overcurrent, MOSFET short circuit, gate driver fault and overtemperature
+- **DRV8320H** gate driver - [datahseet](https://www.ti.com/lit/ds/symlink/drv8320.pdf?ts=178671431434)
+   - Hardware configuration 
+   - 3PWM 
+   - Protections: undervoltage lockout, charge pump fault, MOSFET overcurrent, MOSFET short circuit, gate driver fault and overtemperature
 - **BSZ0904NSI** mosfets
    - Standard 3mm x 3mm footprint (can be easily exchanged)
    - Max current 75A 
    - Max voltage 30V
-- **ACS712**: 
-   -  30Amps bidirectional
-   - In-line current sensing
+- **INA240A1**: - [datasheet](https://www.ti.com/lit/ds/symlink/ina240.pdf?ts=1786684614540)
+   - Inline current sensor
+   - Gain 20V/V
+   - Shunt resistor: 2mΩ (parallel of 4mΩ)
+   - 40A measurement range bidirectional (at 3.3V)
+- **LM7808**:
+   - 8V LDO voltage regulator to VIN 
 
 ### Features
 - **Boards absolute max ratings** 
@@ -33,25 +37,26 @@ Additionally the aim of the board is to serve as a template project for the comm
 - **Encoder/Hall sensors interface**: Integrated 3.3kΩ pullups (configurable)
 - **I2C interface**: Integrated 4.7kΩ pullups (configurable)
 - **Configurable pinout**: Hardware configuration - soldering connections
+- **stemma QT connector**: for easy connection of sensors and peripherals
+- **JST SPI connector**: for easy connection of SPI devices (only one SPI device can be connected at a time)
 - **Arduino headers**: Arduino UNO, Arduino MEGA, STM32 Nucleo boards...
 - **Open Source**: 
    - Fully designed in **EasyEDA**: [EasyEDA project](https://oshwlab.com/the.skuric/SimpleFOC-Drive)
    - Fully available fabrication files - [how to make it yourself](https://docs.simplefoc.com/arduino_simplefoc_shield_fabrication)
-- **Low-cost**: Estimated price of 25-40€ - *Will be available in the SimpleFOC shop*
+- **Low-cost**: Estimated price of 25-40€ - *Will be available through **Makerfabs** soon*
 
 
 ## Shield version comparison
 
-
 Feature | <span class="simple">Simple<span class="foc">FOC</span>Shield</span> v1.x | <span class="simple">Simple<span class="foc">FOC</span>Shield</span> v2.x | <span class="simple">Simple<span class="foc">FOC</span>Shield</span> v3.x | <span class="simple">Simple<span class="foc">FOC</span> <b>Drive</b>Shield</span> v1.x
 |-|-|-|-|-|
-||<img src="https://simplefoc.com/assets/img/v1.jpg" height="120px" class="img300 img_half">|<img src="https://simplefoc.com/assets/img/v2.jpg" class="img300  img_half"  height="120px">|<img  height="120px" src="https://simplefoc.com/assets/img/v3.jpg" class="img300  img_half">|<img src="images/nucleo.png" class="img300  img_half"  height="120px">
+||<img src="https://simplefoc.com/assets/img/v1.jpg" height="120px" class="img300 img_half">|<img src="https://simplefoc.com/assets/img/v2.jpg" class="img300  img_half"  height="120px">|<img  height="120px" src="https://simplefoc.com/assets/img/v3.jpg" class="img300  img_half">|<img src="images/top_real.jpg" class="img300  img_half"  height="120px">
 **PWM Driver** | [L6234](https://www.st.com/resource/en/datasheet/l6234.pdf) | [L6234](https://www.st.com/resource/en/datasheet/l6234.pdf) | [DRV8313](https://www.ti.com/lit/ds/symlink/drv8313.pdf?ts=1719165774986&ref_url=https%253A%252F%252Fwww.google.com%252F)| gate driver: [DRV8320H](https://www.ti.com/lit/ds/symlink/drv8320.pdf) <br> mosfets: [BSZ0904NSI](https://www.infineon.com/dgdl/Infineon-BSZ0904NSI-DataSheet-v02_04-EN.pdf?fileId=db3a30432f29829e012f2a1ec7d90032)
-**Current Sense** | ❌ | [INA240](https://www.ti.com/lit/ds/symlink/ina240.pdf?ts=1719180172738) | [ACS712 (5A)](https://www.allegromicro.com/en/products/sense/current-sensor-ics/zero-to-fifty-amp-integrated-conductor-sensor-ics/acs712) | [ACS712 (30A)](https://www.allegromicro.com/en/products/sense/current-sensor-ics/zero-to-fifty-amp-integrated-conductor-sensor-ics/acs712)
-**Current measurement range** | ❌ | (configurable) ±3.3/5Amps | ±5Amps | ±30Amps
-**Onboard LDO** | ❌ | LM7808 | LM7808 | ❌
+**Current Sense** | ❌ | [INA240](https://www.ti.com/lit/ds/symlink/ina240.pdf?ts=1719180172738) | [ACS712 (5A)](https://www.allegromicro.com/en/products/sense/current-sensor-ics/zero-to-fifty-amp-integrated-conductor-sensor-ics/acs712) | [INA240](https://www.ti.com/lit/ds/symlink/ina240.pdf?ts=1719180172738)
+**Current measurement range** | ❌ | (configurable) ±3.3/5Amps | ±5Amps | ±40Amps
+**Onboard LDO** | ❌ | LM7808 | LM7808 | LM7808 (v1.8+)
 **Stackable** | ✔️ | ✔️ | ✔️ | ✔️
-**Max current** | 2Amps (5Amp peak) | 2Amps (5Amp peak) | 2Amps (3Amp peak) | 20Amps (30Amp peak)
+**Max current** | 2Amps (5Amp peak) | 2Amps (5Amp peak) | 2Amps (3Amp peak) | 20Amps (40Amp peak)
 **Max voltage** | 24V | 35V | 35V | 30V 
 **Protections** | Overtemperature | Overtemperature | Overtemperature, Overcurrent | undervoltage lockout, charge pump fault, MOSFET overcurrent, MOSFET short circuit, gate driver fault, overtemperature
 **Footprint** | 68mm x 53 mm | 68mm x 53 mm | 56mm x 53mm | 56mm x 53mm
@@ -67,13 +72,15 @@ Version  | release | Release date | Comment
 *Simple**FOC** **Drive**Shield* v1.0 | v1.0 | 06/24 | - Transition to **DRV8320H** gate driver <br>  - 30V max voltage
 *Simple**FOC** **Drive**Shield* v1.1 | v1.1 | 07/24 | - Transition to 3x3mm **BSZ09x** mosfets instead of **SE3082G** <br> - 30V max voltage
 *Simple**FOC** **Drive**Shield* v1.2 | [v1.2](https://github.com/simplefoc/SimpleFOC-DriveShield/releases/tag/v1.2) | 08/24 | Initial release <br>- Transition to **4 layer** PCB <br> - Enabling stacking (soldering pads) <br> - Configurable pullups (I2C and encoder) 
+*Simple**FOC** **Drive**Shield* v1.7 | v1.7 | 02/26 | - stemma QT connector<br>-SPI connector<br>- INA240 current sensing <br>- Power supply measurement
+*Simple**FOC** **Drive**Shield* v1.8 | v1.8 | 06/26 | - added LDO to power the board from VIN (8V) 
 
 
 ## Size comparison with SimpleFOCShield v3
 
-<img src="images/comp.png"  height="320px">
+<img src="images/comp.jpg"  height="320px">
 
-## Temperature characteristics
+## Temperature characteristics study
 
 This board can measure the phase currents up to 30Amps, so it is intended to be used in applications that require current draw up to around 20Amps continuous. For higher currents especially in the range of 15-30Amps the board can get quite hot. Depending on the copper thickness of the PCB chosen when ordering the board the temperature can vary, as well as the cooling conditions. The board can be fitted with a heatsink to improve the thermal performance.
 
