@@ -12,6 +12,8 @@ Additionally the aim of the board is to serve as a template project for the comm
 - The board is relatively simple and can be easily modified to fit different requirements.
 - The board is designed in EasyEDA and all the fabrication files are available for download
 
+📢 NEW: This board is now available in our collaboration with **Makerfabs**: [See more on makerfabs.com](https://www.makerfabs.com/simplefoc-driveshield.html)
+
 ### Components
 - **DRV8320H** gate driver - [datahseet](https://www.ti.com/lit/ds/symlink/drv8320.pdf?ts=178671431434)
    - Hardware configuration 
@@ -43,7 +45,7 @@ Additionally the aim of the board is to serve as a template project for the comm
 - **Open Source**: 
    - Fully designed in **EasyEDA**: [EasyEDA project](https://oshwlab.com/the.skuric/SimpleFOC-Drive)
    - Fully available fabrication files - [how to make it yourself](https://docs.simplefoc.com/arduino_simplefoc_shield_fabrication)
-- **Low-cost**: Estimated price of 25-40€ - *Will be available through **Makerfabs** soon*
+- **Low-cost**: Estimated price of 25€ - See more in [our shop](https://simplefoc.com/shop)
 
 
 ## Shield version comparison
